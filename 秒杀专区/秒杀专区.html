@@ -1,0 +1,195 @@
+<div class="piece __piece ms20161028">
+        <style>
+            .ms20161028 .minHeight{min-height:100px;}
+        </style>
+    <!-- 秒杀 -->
+    <div class="seckill topblock">
+        <@DataDirective type=3 floorId="#" sort=sort>
+            <#if floor?? >
+                <#if floor.configMap??>
+                    <#if floor.configMap['titleIcon']??>
+                        <#assign titleIcon = floor.configMap['titleIcon'] >
+                    </#if>
+                </#if>
+            </#if>
+            <h5>
+                  <img src="${titleIcon}">
+             </h5>
+        </@DataDirective>
+
+        <ul class="btn_cntr_in_piece edit minHeight" datatype="3" sort="0" b_i="360,360,80" id="seckillUL">
+            <@DataDirective type=3 floorId="#" sort=sort>
+            <#list datas! as ds>
+                <li tag="seckill" code="${ds.goodsId}">
+                    <div class="seckill-head"><i tag="msg"></i><span tag="d"></span><span><em tag="h"></em>:<em tag="m"></em>:<em tag="s"></em></span></div>
+                    <a href="${ds.url!}" latag="latag_wap_home_${ds.sort!}_seckill_${ds_index+1}_${ds.url!}">
+                        <div class="seckill-body">
+                            <div class="img-box"><img src="${ds.image!}" _src="${ds.image!}" class="lazy_img" width="100%"></div>
+                            <div class="seckill-info">
+                                <h6>${ds.goodsName!}</h6>
+                                <p tag="showFlag"><span></span>¥<strong></strong></p>
+                            </div>
+                         </div>
+                     </a>
+
+                </li>
+            </#list>
+            </@DataDirective>
+        </ul>
+    </div>
+</div>
+<script>
+
+    (function(){
+        var goodsCode = [];
+            $("#seckillUL li").each(function(){
+                goodsCode.push($(this).attr("code"));
+            })
+
+            var url = "";
+            if(document.domain.indexOf('uat') != -1){
+                url = "/cache/query?m=hmget&k=product_price&ss=276&f="+goodsCode.join(",");
+            }else{
+                url = "/cache/query?m=hmget&k=product_price&ss=276&f="+goodsCode.join(",");
+            }
+
+            $.ajax({
+                url:url,
+                type:"get",
+                success:function(d){
+                    //var d = JSON.parse(d);
+                    d = eval("("+d+")");
+                    var tmp =d.data;
+                    var c = 0;
+                    for(var i=0;i<tmp.length;i++){
+                        if(tmp[i].activity.buyEndTimeStr){
+                            bindInfo(tmp[i],d.curDatetime);
+                            c++;
+                        }else{
+                            removeErrorLi(tmp[i]);
+                        }
+                    }
+                    if(c == 0){
+                        $("#seckillUL").parents(".__piece").remove();
+                    }
+                }
+            })
+
+            // a 参数格式为1476846479000
+            function compare(a,b){
+                a = a.replace(/\-/g,'/');
+                var tmp = new Date(a);
+                tmp = tmp.getTime();
+                if(tmp - b > 0){
+                    return true;
+                }else{
+                    return false;
+                }
+            }
+
+            function bindDateStr(el,str){
+                $(el).find("span[tag=d]").text(str.split(' ')[0]);
+                $(el).find("em[tag=h]").text(str.split(' ')[1].split(':')[0]);
+                $(el).find("em[tag=m]").text(str.split(' ')[1].split(':')[1]);
+                $(el).find("em[tag=s]").text(str.split(' ')[1].split(':')[2]);
+            }
+
+            function removeLi(el){
+                if($("#seckillUL").length == 1){
+                    $("#seckillUL").parents(".__piece").remove();
+                }else{
+                    $(el).remove();
+                }
+            }
+
+            function removeErrorLi(data){
+                $("#seckillUL").find("li[tag=seckill][code="+data.code+"]").remove();
+            }
+
+            //a -- 当前时间
+            //b -- 开始时间
+            //c -- 结束时间
+            //d -- 预约中的秒杀开始时间
+            //e -- 预约中的秒杀结束时间
+            function getNameBindInfo(atype,a,b,c,bstr,cstr,el,price,d,dstr,e,estr){
+                var str = "";
+                var tmp = "";
+                if(atype == "0"){
+                    str = "秒杀";
+                    //还没有开始
+                    if(compare(a , b) == false){
+                        tmp = "开始时间";
+                        bindDateStr(el,bstr);
+                        $(el).find("p[tag=showFlag]").find("span").css("background-color","#808080").text("秒杀未开始");
+                    }
+                    //进行中
+                    else if(compare(a , b) == true && compare(a , c) == false){
+                        tmp = "结束时间";
+                        bindDateStr(el,cstr);
+                        $(el).find("p[tag=showFlag]").find("span").css("background-color","#ee5457").text("立即抢购");
+                    }
+                    //已结束
+                    else if(compare(a , c) == true){
+                        tmp = "结束时间";
+                        bindDateStr(el,cstr);
+                        $(el).find("p[tag=showFlag]").find("span").css("background-color","#808080").text("活动结束");
+
+                        removeLi(el);
+                    }
+                }else{
+                    str = "预约";
+                    //还没有开始
+                    if(compare(a , b) == false){
+                        tmp = "开始时间";
+                        bindDateStr(el,bstr);
+                        $(el).find("p[tag=showFlag]").find("span").css("background-color","#808080").text("预约未开始");
+                    }
+                    //进行中
+                    else if(compare(a , b) == true && compare(a , c) == false){
+                        tmp = "结束时间";
+                        bindDateStr(el,cstr);
+                        $(el).find("p[tag=showFlag]").find("span").css("background-color","#ee5457").text("开始预约");
+                    }
+                    //预约已结束,秒杀未开始
+                    else if(compare(a , c) == true && compare(a,d) == false){
+                        str = "秒杀";
+                        tmp = "开始时间";
+                        $(el).find("p[tag=showFlag]").find("span").css("background-color","#808080").text("秒杀未开始");
+                        bindDateStr(el,dstr);
+                    }
+                    //预约已结束,秒杀已开始
+                    else if(compare(a , c) == true && compare(a,d) == true){
+                        str = "秒杀";
+                        tmp = "结束时间";
+                        $(el).find("p[tag=showFlag]").find("span").css("background-color","#ee5457").text("立即抢购");
+                        bindDateStr(el,estr);
+                    }
+                    else if(compare(a,e) == true){
+                        str = "秒杀";
+                        tmp = "已经结束";
+                        $(el).find("p[tag=showFlag]").find("span").css("background-color","#ee5457").text("活动结束");
+                        bindDateStr(el,estr);
+
+                        removeLi(el);
+                    }
+                }
+
+                $(el).find("i[tag=msg]").text(str + tmp);
+                $(el).find("strong").text(price);
+            }
+
+            function bindInfo(data,curTime){
+                var el = $("#seckillUL li[code="+data.code+"]");
+                var price = parseInt(data.app) - parseInt(data.activity.discount);
+                //闪购
+                if(data.activity.isReservation == "0"){
+                //atype,a,b,c,bstr,cstr,el,price,d,dstr,e,estr
+                    getNameBindInfo("0",curTime,data.activity.buyStartTime,data.activity.buyEndTime,data.activity.buyStartTimeStr,data.activity.buyEndTimeStr,el,price);
+                }
+                //预约闪购
+                if(data.activity.isReservation == "1"){
+                    getNameBindInfo("1",curTime,data.activity.reservationStartTime,data.activity.reservationEndTime,data.activity.reservationStartTimeStr,data.activity.reservationEndTimeStr,el,price,data.activity.buyStartTime,data.activity.buyStartTimeStr,data.activity.buyEndTime,data.activity.buyEndTimeStr);
+                }
+            }
+    })();
+</script>

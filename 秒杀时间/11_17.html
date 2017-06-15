@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{margin: 0;padding:0;}
+        a{text-decoration: none;}
+        .secondsKill  button {outline: none;}
+        .secondsKill{width:100%;margin:0 auto;background: url("http://p3.lefile.cn/product/adminweb/2016/11/14/39571c5b-7c7c-4fd1-aaa5-167c6b599216_1.jpg") no-repeat top center #ce0047;}
+        .secondsKill a.right{position: fixed;right:10px;top:300px;width:157px;height: 252px;background: url("http://p4.lefile.cn/product/adminweb/2016/11/14/561ba26a-28ff-42b5-848d-aca013c15fe2_1.png") no-repeat;z-index: 9999;}
+        .secondsKill  .mslist{width:1100px;margin: 0 auto;position: relative;}
+        .secondsKill .logo{background: url("http://p2.lefile.cn/product/adminweb/2016/11/14/a3bfb4e1-0916-47df-a0ec-f55643d436d1_1.png") no-repeat;width:351px;height: 48px;position: absolute;left:0;top:25px;}
+        .secondsKill .mslist .logo a{width: 100%;height: 100%;margin: 0;background: none;padding: 0;border:0;}
+        .secondsKill .rules{padding-top: 1004px;}
+        .secondsKill .mslist .rules h2{text-align: center;color: #fff;font-size: 50px;font-weight: normal;margin-bottom: 26px;}
+        .secondsKill .mslist .rules p{color: #fff;font-size: 24px;line-height: 30px;margin-left: 60px;}
+        .secondsKill .mslist .rules p.title{font-size: 26px;padding-bottom: 4px;margin-top:16px;position: relative;}
+        .secondsKill .mslist .rules p a.button{width:112px;height: 34px;line-height: 34px;background: #0399d8;border: none;color: #fff;text-align: center;border-radius: 5px;float: none;}
+        .secondsKill .mslist .rules .titleIcon {
+            width: 0;height: 0;border: 10px solid transparent;border-bottom: 10px solid #fef701;
+            position: absolute;top: -4px;left:-30px;display: inline-block;
+        }
+        .secondsKill .mslist .rules .titleIcon:after {
+            content: '';position: absolute;left: -10px;top: 10px;width: 0;height: 0;border: 10px solid transparent;
+            border-top: 10px solid #fef701;
+        }
+        .secondsKill .mslist .imgTitle{margin: 0 auto;display: block;padding-top:45px;}
+        .secondsKill .mslist a{width:335px;height: 384px;background: #ffefcd;padding:7px 11px;border:1px solid #cfc9ca;margin-top: 10px;position: relative;float: left;margin-left: 7px;}
+        .secondsKill .mslist a.oneList{width:1062px;height: 368px;float: right}
+        .secondsKill .mslist a.oneList img{float: left;}
+        .secondsKill .mslist a.oneList .right{float: left;margin-left: 30px;}
+        .secondsKill .mslist a.oneList .right p{margin-top:10px;}
+        .secondsKill .mslist a.oneList .right p.text{font-size: 18px;line-height: 20px;color: #3a3a3a;}
+        .secondsKill .mslist a.oneList .right p button{width:197px;margin: 0 40px 13px 0;}
+        .secondsKill .mslist a.oneList .right p b{margin-left: 40px;}
+        .secondsKill .mslist h2{font-size: 18px; color: #191919;margin-top:12px;}
+        .secondsKill .mslist h2.twoH2{color: #3a3a3a;}
+        .secondsKill .mslist p.bot{position: absolute;left:8px;bottom: 10px;width:95%;}
+        .secondsKill .mslist p {line-height: 20px;color: #3a3a3a;font-weight: bold;}
+        .secondsKill .mslist p i{text-decoration: line-through;color: #672a08;font-style: normal;}
+        .secondsKill .mslist p b{font-size: 18px;color: #af1515;padding-left: 6px;}
+        .secondsKill .mslist p b span{font-size: 30px;}
+        .secondsKill .mslist p button{width:114px;height: 40px;background: #afafaf;border: none;color: #fff;font-size: 22px;vertical-align: bottom;position: absolute;right: 0;bottom: 0;}
+        .secondsKill .mslist .mtitle{margin: 30px 0 10px 0;}
+        .secondsKill  .mstext{clear: both;padding:30px 0;}
+        .secondsKill  .mstext p{text-align: center;color: #fff;line-height: 36px;font-size: 24px;}
+        .secondsKill  .mstext p a{color: #fff;}
+
+    </style>
+</head>
+<body>
+    <div class="secondsKill">
+        <a href="http://crm2.qq.com/page/portalpage/wpa.php?uin=4009868999&aty=0&a=0&curl=&ty=1" class="right"></a>
+        <div class="mslist">
+            <div class="logo"><a href="http://17.lenovo.com.cn"></a></div>
+            <div class="rules">
+                <h2>机会虽是月月有，但该出手时就出手!</h2>
+                <p class="title"><i class="titleIcon"></i>活动规则：</p>
+                <p> 1.必须是注册用户，请提前登陆账号；<br> 2.每个ID只能秒杀成功1次，秒杀成功后，则不能再秒杀；<br> 3.如未秒杀成功，不扣积分；</p>
+                <p class="title"><i class="titleIcon"></i>如何获取积分： </p>
+                <p>    1.注册可得积分，<a href="" class="button" id="registered">我要注册</a>；<br> 2.下单可得积分；</p>
+            </div>
+            <div class="amShop">
+                <img src="http://p4.lefile.cn/product/adminweb/2016/11/14/4d211755-aaab-4471-9717-c934585d8d55_1.png" alt="" class="imgTitle">
+                <!--土豪-->
+                <img src="http://p2.lefile.cn/product/adminweb/2016/11/14/e1b25413-9c76-4901-ac0b-ff2ceda08d19_1.png" alt="" class="mtitle">
+                <a href="" class="oneList">
+                    <img src="http://p2.lefile.cn/product/adminweb/2016/11/14/6483d945-5795-4d8b-9e4a-2ab18cd067be_1.png" alt="">
+                    <div class="right">
+                         <h2>ThinkPad X1 Yoga 1st Gen 8G 256 W10C 时尚商务笔记本一台</h2>
+                        <h2 class="twoH2">yoga260便携灵动，从不止轻薄     17秒杀，轻装上阵，无处不是你的主场！！</h2>
+                        <p class="text">CPU: 第六代智能英特尔®酷睿™i7-6500U处理器(2.5睿频至3.1GHz,4MB)
+                            <br> 内存: 8GB 1866MHz LPDDR3
+                            <br> 硬盘: 256GB 固态硬盘
+                            <br>操作系统: 预装正版Windows 10 中文家庭版64位
+                            <br>显卡: Intel® HD Graphics 520显卡
+                            <br>前置电池: 4芯锂聚合物(52Wh)
+                            <br>无线网卡: Intel 8260 AC 2x2
+                            <br>指纹识别：指纹模块
+                            <br>键盘：背光键盘
+                            <br>摄像头	720p HD 摄像头
+                            <br>屏幕尺寸	14英寸FHD(1920*1080) IPS 触摸屏
+                            <br>服务	1年部件和人工，送1年有限上门</p>
+                        <p><i>价值:￥13000</i><b><span>39999</span>积分</b><button>即将开始</button></p>
+
+                    </div>
+                </a>
+                <img src="http://p2.lefile.cn/product/adminweb/2016/11/14/47e06e99-d422-4b7d-addc-e4a4b93d1d6a_1.png" alt="" class="mtitle">
+
+                <a href="">
+                    <img src="http://p2.lefile.cn/product/adminweb/2016/11/14/fc167a20-9e02-449a-b53c-759e00ba62e5_1.png" alt="">
+                    <h2>史努比创意马克杯</h2>
+                    <p>虽然是“杯具” <br>但e企联想会一辈子陪着你！</p>
+                    <p  class="bot"><i>价值:￥30</i><b><span>99</span>积分</b><button>即将开始</button></p>
+                </a>
+                <a href="">
+                    <img src="http://p4.lefile.cn/product/adminweb/2016/11/02/166a655a-b7d1-43a7-b324-1d4cf0e379fc_1.png" alt="">
+                    <h2>稻草人小夜灯-直插黄光</h2>
+                    <p>单身的你<br> 需要一个等你回家的稻草人</p>
+                    <p class="bot"><i>价值:￥49</i><b><span>299</span>积分</b><button>即将开始</button></p>
+                </a>
+                <a href="">
+                    <img src="http://p3.lefile.cn/product/adminweb/2016/11/02/f6592acc-ef71-4b67-a611-bb14f1fd1b4e_1.png" alt="">
+                    <h2>暴风魔镜小D </h2>
+                    <p>一个人也不无聊 <br>带上小D一起撸片！</p>
+                    <p class="bot"><i>价值:￥129</i><b><span>499</span>积分</b><button>即将开始</button></p>
+                </a>
+
+                <a href="">
+                    <img src="http://p2.lefile.cn/product/adminweb/2016/11/02/87bec830-8899-4646-86af-13531bb3749b_1.png" alt="">
+                    <h2>联想（Lenovo）MK100 87键 机械键盘</h2>
+                    <p>情场失意，游戏场上必须得意！ <br>87键敏感触觉，让你在游戏里尽情驰骋！</p>
+                    <p class="bot"><i>价值:￥179</i><b><span>999</span>积分</b><button>即将开始</button></p>
+                </a>
+                <a href="">
+                    <img src="http://p2.lefile.cn/product/adminweb/2016/11/02/6072366c-dfbe-468f-8a25-d758998c763c_1.png" alt="">
+                    <h2>德国博朗男士电动剃须刀</h2>
+                    <p>德国进口剃须刀 <br>让你性感有范儿，分分钟秒杀女神！</p>
+                    <p class="bot"><i>价值:￥449</i><b><span>2999</span>积分</b><button>即将开始</button></p>
+                </a>
+                <a href="">
+                    <img src="http://p3.lefile.cn/product/adminweb/2016/11/02/cb202e61-f2ea-41a9-a745-a4e1dfacafdc_1.png" alt="">
+                    <h2>FIIL Diva(皓月白)耳机</h2>
+                    <p>孤单寂寞冷 <br>必须来一首暖心的歌陪你过冬</p>
+                    <p class="bot"><i>价值:￥999</i><b><span>5999</span>积分</b><button>即将开始</button></p>
+                </a>
+                <!--情侣区-->
+                <img src="http://p3.lefile.cn/product/adminweb/2016/11/14/b8ae5780-7f44-40c3-9a8c-1f331495a1aa_1.png" alt="" class="mtitle">
+                <a href="">
+                    <img src="http://p1.lefile.cn/product/adminweb/2016/11/14/2d783c65-1bc5-4935-9a61-abd4071d6f57_1.png" alt="">
+                    <h2>20元电话充值卡</h2>
+                    <p>话费充值卡在手 <br>再远的距离都不怕！ （异地恋标配）</p>
+                    <p class="bot"><i>价值:￥20</i><b><span>99</span>积分</b><button>即将开始</button></p>
+                </a>
+                <a href="">
+                    <img src="http://p2.lefile.cn/product/adminweb/2016/11/02/d7da343a-9014-46c0-affa-d3d7aeda7291_1.png" alt="">
+                    <h2>爆红大象避孕套</h2>
+                    <p>为了下一代完美避开处女座 <br>你必须拥有它！</p>
+                    <p class="bot"><i>价值:￥59</i><b><span>299</span>积分</b><button>即将开始</button></p>
+                </a>
+                <a href="">
+                    <img src="http://p4.lefile.cn/product/adminweb/2016/11/02/4ce595cc-7b75-4216-96a5-901b4c686e74_1.png" alt="">
+                    <h2>DIY创意相册</h2>
+                    <p>你和她的完美瞬间，就定格在这个相册</p>
+                    <p class="bot"><i>价值:￥59</i><b><span>499</span>积分</b><button>即将开始</button></p>
+                </a>
+                <a href="">
+                    <img src="http://p4.lefile.cn/product/adminweb/2016/11/02/8261a3d8-2864-4f5b-96c5-b00f3aa11586_1.png" alt="">
+                    <h2>景德镇陶瓷情侣碗套装</h2>
+                    <p>有碗才有家，有碗才能养活她！</p>
+                    <p class="bot"><i>价值:￥198</i><b><span>999</span>积分</b><button>即将开始</button></p>
+                </a>
+                <a href="">
+                    <img src="http://p3.lefile.cn/product/adminweb/2016/11/02/8875b71e-98ad-4d7b-8100-20582a8833c6_1.png" alt="">
+                    <h2>联想UM10C直播版手机麦克风</h2>
+                    <p>爱她就给来一首《loving you》 <br>求婚必备</p>
+                    <p class="bot"><i>价值:￥399</i><b><span>2999</span>积分</b><button>即将开始</button></p>
+                </a>
+                <a href="">
+                    <img src="http://p2.lefile.cn/product/adminweb/2016/11/02/1aeb6157-5f78-4b4a-b5f1-edc1b036f0cd_1.png" alt="">
+                    <h2>LG手机照片拍立得</h2>
+                    <p>把你们每一个动人瞬间都记录下来<br> 钱包夹层特配。</p>
+                    <p class="bot"><i>价值:￥299</i><b><span>5999</span>积分</b><button>即将开始</button></p>
+                </a>
+            </div>
+            <div class="pmShop">
+                <img src="http://p3.lefile.cn/product/adminweb/2016/11/14/94f9b62b-dc39-4ec2-b621-f4d260bdfe5f_1.png" alt="" class="imgTitle">
+                <!--熟男-->
+                <img src="http://p2.lefile.cn/product/adminweb/2016/11/14/f604c13b-ccb2-4d6b-a3f8-7e56a19a83ee_1.png" alt="" class="mtitle">
+
+                <a href="">
+                    <img src="http://p4.lefile.cn/product/adminweb/2016/11/02/4416e596-3022-4f46-824b-ec0787e90903_1.png" alt="">
+                    <h2>南极人纯棉中筒袜</h2>
+                    <p>寒从足来，暖从心起，只有脚舒服了 <br>身体才舒服。</p>
+                    <p class="bot"><i>价值:￥29.8</i><b><span>99</span>积分</b><button>即将开始</button></p>
+                </a>
+                <a href="">
+                    <img src="http://p4.lefile.cn/product/adminweb/2016/11/02/90e39f6d-765f-4a2d-a532-fec7a20e2f95_1.png" alt="">
+                    <h2>双USB自动断电充电器</h2>
+                    <p>公牛充电管家，充电不过度，安全又环保</p>
+                    <p class="bot"><i>价值:￥65</i><b><span>299</span>积分</b><button>即将开始</button></p>
+                </a>
+                <a href="">
+                    <img src="http://p3.lefile.cn/product/adminweb/2016/11/02/5e34c707-ddec-4a82-a9ae-c9d2f5ddf8aa_1.png" alt="">
+                    <h2>星空智能心率手环</h2>
+                    <p>带上星空去运动，又潮又健康，熟男必备</p>
+                    <p class="bot"><i>价值:￥129</i><b><span>499</span>积分</b><button>即将开始</button></p>
+                </a>
+
+                <a href="">
+                    <img src="http://p3.lefile.cn/product/adminweb/2016/11/02/1e121ecd-4a3e-4351-b78a-5687a30ca41b_1.png" alt="">
+                    <h2>绘客HK908绘图板手写板</h2>
+                    <p>爸妈打字有障碍？17秒杀手绘板<br> 让爸妈用电脑不受键盘阻碍！！</p>
+                    <p class="bot"><i>价值:￥219</i><b><span>999</span>积分</b><button>即将开始</button></p>
+                </a>
+                <a href="">
+                    <img src="http://p4.lefile.cn/product/adminweb/2016/11/02/0a7808a1-b73c-41c7-a46f-00b5541ede53_1.png" alt="">
+                    <h2>手工原木蓝牙音箱 </h2>
+                    <p>天籁原声，发烧级音质<br> 熟男的路上必须追求品质</p>
+                    <p class="bot"><i>价值:￥389</i><b><span>2999</span>积分</b><button>即将开始</button></p>
+                </a>
+                <a href="">
+                    <img src="http://p2.lefile.cn/product/adminweb/2016/11/02/de236ace-5813-4713-9ed0-94ef3e160ce2_1.png" alt="">
+                    <h2>智能电竞机械键盘</h2>
+                    <p>幻彩师，最清脆的按键触感和清晰的按键 反馈感，17秒杀，让胜利干脆点，给你的 手指最好的褒奖</p>
+                    <p class="bot"><i>价值:￥899</i><b><span>5999</span>积分</b><button>即将开始</button></p>
+                </a>
+                <!--女神-->
+                <img src="http://p3.lefile.cn/product/adminweb/2016/11/14/015d02f5-1562-4ecc-9307-c93b6c74b4af_1.png" alt="" class="mtitle">
+                <a href="">
+                    <img src="http://p4.lefile.cn/product/adminweb/2016/11/02/e3cf34eb-c713-4228-a4ce-c920a2384247_1.png" alt="">
+                    <h2>旅行收纳袋</h2>
+                    <p>帮你分类，让你一目了然，清晰可见！<br> 旅行必备！</p>
+                    <p class="bot"><i>价值:￥19.9</i><b><span>999</span>积分</b><button>即将开始</button></p>
+                </a>
+                <a href="">
+                    <img src="http://p2.lefile.cn/product/adminweb/2016/11/02/2231cf83-9134-43fa-9643-6cbeeb918cad_1.png" alt="">
+                    <h2>55度保温杯</h2>
+                    <p>持久的温暖，给最需要补水的你 <br>水水嫩嫩真女神！</p>
+                    <p class="bot"><i>价值:￥69</i><b><span>299</span>积分</b><button>即将开始</button></p>
+                </a>
+                <a href="">
+                    <img src="http://p2.lefile.cn/product/adminweb/2016/11/02/bdc8990b-7da3-487c-8db5-abfdb7a59103_1.png" alt="">
+                    <h2>体质分析仪</h2>
+                    <p>十项全能健康数据，多人共享智能自连 <br>拥有它，才能一直美下去</p>
+                    <p class="bot"><i>价值:￥139</i><b><span>499</span>积分</b><button>即将开始</button></p>
+                </a>
+                <a href="">
+                    <img src="http://p2.lefile.cn/product/adminweb/2016/11/02/30cb7cd6-b311-4d3c-b587-bb0efb91fefc_1.png" alt="">
+                    <h2>智能提醒水杯</h2>
+                    <p>老是忘记喝水？你需要一款会自动提醒<br> 喝水的杯子！（追女神必备）</p>
+                    <p class="bot"><i>价值:￥299</i><b><span>999</span>积分</b><button>即将开始</button></p>
+                </a>
+                <a href="">
+                    <img src="http://p2.lefile.cn/product/adminweb/2016/11/02/4c7b2224-c9d6-4c55-b568-c83e725e4d84_1.png" alt="">
+                    <h2>康宁透明锅</h2>
+                    <p>坦然通透，赏心悦目，烹饪看得见 <br>让烹饪成为一种乐趣</p>
+                    <p class="bot"><i>价值:￥499</i><b><span>2999</span>积分</b><button>即将开始</button></p>
+                </a>
+                <a href="">
+                    <img src="http://p1.lefile.cn/product/adminweb/2016/11/02/4087fe46-930d-431a-9080-638b99a549ff_1.png" alt="">
+                    <h2>德国BOSS围巾</h2>
+                    <p>17秒杀，让你同时拥有风度和温度 <br>为你“颈”上添花</p>
+                    <p class="bot"><i>价值:￥1288</i><b><span>5999</span>积分</b><button>即将开始</button></p>
+                </a>
+
+                <!--儿童区-->
+                <img src="http://p1.lefile.cn/product/adminweb/2016/11/14/337f6479-e00f-4d34-b064-7cf9dc1e7803_1.png" alt="" class="mtitle">
+                <a href="">
+                    <img src="http://p3.lefile.cn/product/adminweb/2016/11/02/2c823fc4-d9a8-4344-9697-7fdcd911cfcd_1.png" alt="">
+                    <h2>便携儿童吸管水杯</h2>
+                    <p>滴水不漏，防呛设计，保护宝宝安全喝水</p>
+                    <p class="bot"><i>价值:￥19</i><b><span>99</span>积分</b><button>即将开始</button></p>
+                </a>
+                <a href="">
+                    <img src="http://p4.lefile.cn/product/adminweb/2016/11/02/3b3568e7-2507-48e9-ac13-a849e50c8860_1.png" alt="">
+                    <h2>贝瓦短毛绒背包</h2>
+                    <p>不易掉色，环保无公害<br> 给孩子一个亲密的小伙伴</p>
+                    <p class="bot"><i>价值:￥79</i><b><span>299</span>积分</b><button>即将开始</button></p>
+                </a>
+                <a href="">
+                    <img src="http://p3.lefile.cn/product/adminweb/2016/11/14/c6c45ecd-f304-45ff-90a9-5f95bf418101_1.png" alt="">
+                    <h2>创意ATM密码存储罐</h2>
+                    <p>让宝宝从小养成存钱的习惯<br> 享受存钱的乐趣</p>
+                    <p class="bot"><i>价值:￥118</i><b><span>499</span>积分</b><button>即将开始</button></p>
+                </a>
+
+                <a href="">
+                    <img src="http://p3.lefile.cn/product/adminweb/2016/11/02/280ad3ec-f70a-4164-af92-c3e25816736c_1.png" alt="">
+                    <h2>巴迪龙彩屏电话手表</h2>
+                    <p>全彩触屏，好看好用又护眼<br> 随时随地清晰通话，爸妈眼中的千里眼</p>
+                    <p class="bot"><i>价值:￥199</i><b><span>999</span>积分</b><button>即将开始</button></p>
+                </a>
+                <a href="">
+                    <img src="http://p2.lefile.cn/product/adminweb/2016/11/02/a1bd70ce-fc3e-419b-9394-02493e47b78b_1.png" alt="">
+                    <h2>儿童手表植物大战僵尸版</h2>
+                    <p>孩子的腕式手机，可以打电话防走丢的<br> 定位手表，孩子的随行卫士 </p>
+                    <p class="bot"><i>价值:￥499</i><b><span>2999</span>积分</b><button>即将开始</button></p>
+                </a>
+                <a href="">
+                    <img src="http://p2.lefile.cn/product/adminweb/2016/11/02/977eb2fc-3330-4759-9511-3e872992471c_1.png" alt="">
+                    <h2>儿童机器人AR版</h2>
+                    <p>没时间陪孩子，孩子的各种奇妙问题谁来 解决？360儿童机器人,宝宝的贴身小老师</p>
+                    <p class="bot"><i>价值:￥999</i><b><span>5999</span>积分</b><button>即将开始</button></p>
+                </a>
+            </div>
+        </div>
+
+        <div class="mstext">
+            <p>所有活动解释权归e企联想官方所有 </p>
+            <p>详情请咨询 <a href="tel:400-986-8999" class="tel">400-986-8999</a></p>
+        </div>
+    </div>
+<script src="jquery.js"></script>
+<script>
+$(function(){
+
+    $("#registered").click(function(){
+        passport.show();
+    });
+    $(".secondsKill .amShop a,.secondsKill .pmShop a").click(function(){
+        if (!passport.isLogin()) {
+            passport.show();
+            return;
+        }
+    })
+
+    var listCode = "53861,53586";
+  //  var listCode = "58831,58781,58783,58784,58785,58786,58787,58119,58795,58788,58789,58790,58791,58852,58811,58813,58815,58816,58819,58821,58822,58144,58823,58824,58015,58825,58826,58853,58828,58829,58830";
+    var list = [] ;
+    var number = [];
+    var newTime = "",newTime_year = "",newTime_mounth = "",newTime_data = "",newTime_huor = "";
+    $.ajax({
+        url:"/cache/query?k=product_price&f="+listCode+"&m=hmget",
+        type:"get",
+        success:function(d){
+            var d = JSON.parse(d);
+            newTime = d.curDatetime;
+            newTime_year =newTime.substring(0,4) ;//年
+            newTime_mounth =newTime.substring(5,7); //月
+            newTime_data =newTime.substring(8,10); //日
+            newTime_huor =newTime.substring(11,13); //时
+            for(var i=0;i< d.data.length;i++){
+                var tmp = {activityType : "",productCode : ""};
+                if(!d.data[i].activity.activityType){
+                    tmp.activityType = 0;
+                }else{
+                    tmp.activityType = d.data[i].activity.activityType;
+                }
+                tmp.productCode = d.data[i].code;
+                list.push(tmp);
+            }
+            var proInfos =  JSON.stringify(list).replace(/["“”]/g,"");
+            $.ajax({
+                url:"/stock/getStockInfo.jhtm",
+                type:"post",
+                data:{
+                    "proInfos":proInfos
+                },
+                success:function(data){
+
+                    for(var i=0;i<data.length;i++){
+                        var num = data[i].salesNumber;
+                        number.push(num);
+                    }
+
+
+                    /*$(".secondsKill .mslist a button").each(function(index){
+                        if(number[index] == 1){
+                            $(this).html("已抢完");
+                            $(this).css({"background": "#afafaf"});
+                        }
+                    })*/
+                    time(myYear,myMonth,myDay,myHours);
+
+                }
+            })
+
+
+        }
+    })
+
+    var myDate = new Date();
+    var myYear = myDate.getFullYear(); //年
+    var myMonth = myDate.getMonth()+1;//月
+    var myDay = myDate.getDate();//日
+    var myHours = myDate.getHours();//时
+    var myMinutes = myDate.getMinutes();//分
+    var clearTime = "";
+
+function end(){
+    //clearInterval(clearTime);
+    $(".secondsKill").find("button").html("已结束");
+    $(".secondsKill").find("button").css({"background": "#afafaf"});
+    /*$(".secondsKill a").click(function(event){
+        event.preventDefault();
+    })*/
+}
+    function num(){
+        $(".secondsKill .mslist a button").each(function(index){
+            if(number[index] == 1){
+                $(this).html("已抢完");
+                $(this).css({"background": "#afafaf"});
+            }
+        });
+    }
+function time(Year,Month,Day,Hours){
+    if (Year != 2016) {
+        end();
+    } else {
+        if (Month == 11) {
+            if(Day < 17){
+                $(".secondsKill").find("button").html("即将开始");
+                $(".secondsKill").find("button").css({"background": "#afafaf"});
+            }else if (Day == 17) {
+                //上午
+                var AM = function () {
+                    if (Hours < 10) {
+                        $(".secondsKill").find("button").html("即将开始");
+                        $(".secondsKill").find("button").css({"background": "#afafaf"});
+                    } else if (Hours == 10 || Hours <= 12) {
+                        $(".secondsKill .amShop").find("button").html("立即秒杀");
+                        $(".secondsKill .amShop").find("button").css({"background": "red"});
+                              num();
+                        $(".secondsKill .pmShop").find("button").html("即将开始");
+                        $(".secondsKill .pmShop").find("button").css({"background": "#afafaf"});
+                    } else {
+                        $(".secondsKill .amShop").find("button").html("已结束");
+                        $(".secondsKill .amShop").find("button").css({"background": "#afafaf"});
+                    }
+                };
+                //下午
+                var PM = function () {
+                    if (Hours == 13) {
+                        $(".secondsKill .amShop").find("button").html("立即秒杀");
+                        $(".secondsKill .amShop").find("button").css({"background": "red"});
+
+                        $(".secondsKill .pmShop").find("button").html("即将开始");
+                        $(".secondsKill .pmShop").find("button").css({"background": "#afafaf"});
+                    }else if(Hours == 14){
+                        $(".secondsKill .amShop").find("button").html("已结束");
+                        $(".secondsKill .amShop").find("button").css({"background": "#afafaf"});
+
+                        $(".secondsKill .pmShop").find("button").html("即将开始");
+                        $(".secondsKill .pmShop").find("button").css({"background": "#afafaf"});
+                    }else if (Hours == 15 || Hours <= 17) {
+                        $(".secondsKill .pmShop").find("button").html("立即秒杀");
+                        $(".secondsKill .pmShop").find("button").css({"background": "red"});
+                        num();
+                        $(".secondsKill .amShop").find("button").html("已结束");
+                        $(".secondsKill .amShop").find("button").css({"background": "#afafaf"});
+                    } else {
+                        end();
+                    }
+                };
+
+                Hours <= 12 ? AM() : PM();
+
+            } else {
+                end();
+            }
+        } else {
+            end();
+        }
+    }
+}
+  //  clearTime = setInterval(time,1000);
+
+})
+
+
+</script>
+</body>
+</html>

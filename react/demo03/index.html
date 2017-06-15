@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo03</title>
+    <script src="../lib/react.js"></script>
+    <script src="../lib/react-dom.js"></script>
+    <script src="../lib/browser.min.js"></script>
+</head>
+<body>
+<div id="test"></div>
+<div id="text"></div>
+    <script type="text/babel">
+        //获取DOM节点
+        var Content = React.createClass({
+            handleClick: function(){
+                this.refs.myTextInput.focus();
+            },
+            render:function(){
+                return(
+                    <div>
+                        <input type="text" ref="myTextInput" />
+                        <button onClick={this.handleClick}>clcik</button>
+                    </div>
+                )
+            }
+        });
+        ReactDOM.render(
+                <Content />,
+                document.getElementById("test")
+        )
+
+        //this.state
+
+        var TextButton = React.createClass({
+            getInitialState : function(){
+                return {text : true};
+            },
+            handleClick : function(){
+                this.setState({text:!this.state.text})
+            },
+            render : function(){
+                var text = this.state.text ? 'text' : "click text";
+                return(
+                        <p onClick = {this.handleClick}>
+                            {text}
+                        </p>
+                )
+            }
+        });
+        ReactDOM.render(
+                <TextButton />,
+                document.getElementById("text")
+        )
+
+    </script>
+</body>
+</html>

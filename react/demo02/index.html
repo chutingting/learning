@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo02</title>
+    <script src="../lib/react.js"></script>
+    <script src="../lib/react-dom.js"></script>
+    <script src="../lib/browser.min.js"></script>
+</head>
+<body>
+<div id="test"></div>
+<div id="text"></div>
+    <script type="text/babel">
+
+    //this.props.children
+        var  List = React.createClass({
+                render:function(){
+                    return(
+                            <ol>
+                            {
+                                React.Children.map(this.props.children,function(child){
+                                        return <li>{child}</li>;
+                                    })
+                            }
+                            </ol>
+                    )
+                }
+            })
+
+        ReactDOM.render(
+                <List>
+                    <span>hello1</span>
+                    <span>hello2</span>
+                    <span>hello3</span>
+                    <span>hello4</span>
+                </List>,
+                document.getElementById("test")
+         )
+
+        //PropTypes
+        var  Title = React.createClass({
+            propTypes : {
+                title: React.PropTypes.number.isRequired,
+            },
+            render : function(){
+                return <h1>{this.props.title}</h1>;
+            }
+        });
+
+    var data = 12
+        ReactDOM.render(
+                <Title title={data} />,
+            document.getElementById("text")
+        )
+
+    </script>
+</body>
+</html>

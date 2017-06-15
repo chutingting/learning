@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo01</title>
+    <script src="../lib/react.js"></script>
+    <script src="../lib/react-dom.js"></script>
+    <script src="../lib/browser.min.js"></script>
+</head>
+<body>
+    <div id="test"></div>
+    <script type="text/babel">
+      /*  var arr = [
+                <h1>h1h1h1h1h1</h1>,
+                <h2>h2h2h2h2h2h2h2</h2>
+        ]
+        ReactDOM.render(
+                 <h1>{arr}</h1>,
+                document.querySelector("#test")
+        )*/
+
+       /* var names = ["小花","小明","小红"];
+        ReactDOM.render(
+                <div>
+                    {
+                        names.map(function(name){
+                                return <div>你好,{name}</div>
+                            })
+                    }
+                </div>,
+                document.getElementById("test")
+        )*/
+
+        //组件
+
+        var Hello = React.createClass({
+            render:function(){
+                return <h1>你好,{this.props.name}</h1>;
+            }
+        })
+
+        ReactDOM.render(
+                <Hello name="HH" />,
+              document.getElementById("test")
+        )
+
+    </script>
+</body>
+</html>

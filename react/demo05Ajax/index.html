@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax</title>
+    <script src="../lib/react.js"></script>
+    <script src="../lib/react-dom.js"></script>
+    <script src="../lib/browser.min.js"></script>
+    <script src="../lib/jquery.js"></script>
+</head>
+<body>
+<div id="test"></div>
+    <script type="text/babel">
+        //Ajax
+        var AjaxList = React.createClass({
+            getInitialState : function(){
+                return{
+                    result:[]
+                };
+            },
+            componentDidMount : function(){
+                $.get(this.props.aa,function(data){
+                    var tmp = [];
+                    for(var i=0;i<data.length;i++){
+                        tmp.push({
+                            name : data[i].name,
+                            age : data[i].age
+                        })
+                    }
+
+                    this.setState({result:tmp});
+                }.bind(this))
+            },
+            render :function(){
+                var list = [];
+                this.state.result.map(function(item){
+
+                    list.push(
+                        <div>
+                            <div>{item.name}</div>
+                            <div>{item.age}</div>
+                        </div>
+                    );
+                })
+
+                return(
+                    <div>
+                        {list}
+                    </div>
+                )
+            }
+        });
+        ReactDOM.render(
+                <AjaxList  aa="data.json"/>,
+                document.getElementById("test")
+        )
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+    <style>
+
+    </style>
+</head>
+<body>
+<nav>
+    <ul class="bigImg">
+        <li class="icon-home"><a href="#"><i></i><span></span></a></li>
+        <li class="icon-cate"><a href="#"><i></i><span></span></a></li>
+        <li class="icon-cart"><a href="#"><i></i><span></span></a></li>
+        <li class="icon-my"><a href="#"><i></i><span></span></a></li>
+    </ul>
+    <div class="activity-entrance"><a href="#"><img src="" width="100%"></a></div>
+</nav>
+<script src="jquery.js"></script>
+<script type="text/javascript">
+    document.documentElement.style.cssText = 'font-size:' + (document.body.offsetWidth / 1080) * 100 + 'px';
+    $(window).resize(function(){
+        document.documentElement.style.cssText = 'font-size:' + (document.body.offsetWidth / 1080) * 100 + 'px';
+    });
+
+    $.ajax({
+        url:"/cache/query?m=get&k=appfoot&ss=949",
+        type:"get",
+        dataType:"json",
+        success:function(d){
+            $("nav .icon-home span").html(d.data[0].skin.home.name);
+            $("nav .icon-cate span").html(d.data[0].skin.classify.name);
+            $("nav .icon-cart span").html(d.data[0].skin.shopcar.name);
+            $("nav .icon-my span").html(d.data[0].skin.personal.name);
+
+            $("nav .icon-home i").css({
+                "background":"url("+d.data[0].skin.home.icon_n+")",
+                "background-size":"contain"
+            });
+            $("nav .icon-cate i").css({
+                "background":"url("+d.data[0].skin.classify.icon_n+")",
+                "background-size":"contain"
+            });
+            $("nav .icon-cart i").css({
+                "background":"url("+d.data[0].skin.shopcar.icon_n+")",
+                "background-size":"contain"
+            });
+            $("nav .icon-my i").css({
+                "background":"url("+d.data[0].skin.personal.icon_n+")",
+                "background-size":"contain"
+            });
+
+            $("nav .activity-entrance a img").attr("src",d.data[0].huodong.icon_n);
+            $("nav .activity-entrance a").attr("href",d.data[0].huodong.link);
+
+            $(".icon-home a").click(function(){
+                $(".icon-home i").css({
+                    "background":"url("+d.data[0].skin.home.icon_s+")",
+                    "background-size":"contain"
+                });
+                $("nav .icon-cate i").css({
+                    "background":"url("+d.data[0].skin.classify.icon_n+")",
+                    "background-size":"contain"
+                });
+                $("nav .icon-cart i").css({
+                    "background":"url("+d.data[0].skin.shopcar.icon_n+")",
+                    "background-size":"contain"
+                });
+                $("nav .icon-my i").css({
+                    "background":"url("+d.data[0].skin.personal.icon_n+")",
+                    "background-size":"contain"
+                });
+            });
+            $(".icon-cate i").click(function(){
+                $(this).css({
+                    "background":"url("+d.data[0].skin.classify.icon_s+")",
+                    "background-size":"contain"
+                });
+                $("nav .icon-home i").css({
+                    "background":"url("+d.data[0].skin.home.icon_n+")",
+                    "background-size":"contain"
+                });
+                $("nav .icon-cart i").css({
+                    "background":"url("+d.data[0].skin.shopcar.icon_n+")",
+                    "background-size":"contain"
+                });
+                $("nav .icon-my i").css({
+                    "background":"url("+d.data[0].skin.personal.icon_n+")",
+                    "background-size":"contain"
+                });
+            });
+            $(".icon-cart i").click(function(){
+                $(this).css({
+                    "background":"url("+d.data[0].skin.shopcar.icon_s+")",
+                    "background-size":"contain"
+                });
+                $("nav .icon-home i").css({
+                    "background":"url("+d.data[0].skin.home.icon_n+")",
+                    "background-size":"contain"
+                });
+                $("nav .icon-cate i").css({
+                    "background":"url("+d.data[0].skin.classify.icon_n+")",
+                    "background-size":"contain"
+                });
+                $("nav .icon-my i").css({
+                    "background":"url("+d.data[0].skin.personal.icon_n+")",
+                    "background-size":"contain"
+                });
+            });
+            $(".icon-my i").click(function(){
+                $(this).css({
+                    "background":"url("+d.data[0].skin.personal.icon_s+")",
+                    "background-size":"contain"
+                });
+                $("nav .icon-home i").css({
+                    "background":"url("+d.data[0].skin.home.icon_n+")",
+                    "background-size":"contain"
+                });
+                $("nav .icon-cate i").css({
+                    "background":"url("+d.data[0].skin.classify.icon_n+")",
+                    "background-size":"contain"
+                });
+                $("nav .icon-cart i").css({
+                    "background":"url("+d.data[0].skin.shopcar.icon_n+")",
+                    "background-size":"contain"
+                });
+            });
+
+            $("nav a").css({"color":""+d.data[0].skin.textcolor_n+""});
+
+            $("nav a").click(function(){
+                $(this).css({"color":""+d.data[0].skin.textcolor_s+""});
+                $(this).parents("li").siblings("li").find("a").css({"color":""+d.data[0].skin.textcolor_n+""});
+            });
+            $("nav").css({
+                "background":"url("+d.data[0].skin.backimage+") "+d.data[0].skin.backcolor+""
+            });
+
+            if(d.data[0].huodong.iswork == true){
+                $("nav").addClass("active");
+            }else{
+                $("nav").removeClass("active");
+            }
+
+            /*if(d.data[0].skin.iconbig == 1){
+                $("ul").addClass("bigImg");
+            }else{
+                $("ul").removeClass("bigImg");
+            }*/
+
+
+
+        }
+    })
+</script>
+</body>
+</html>

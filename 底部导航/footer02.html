@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+    <style>
+        nav.active .activity-entrance i{display: block;width: 100%; height:  100%;margin:0 auto;}
+        nav.active .smActivity-entrance{display: block; position: absolute; bottom: -0.43rem; left: 50%;  margin-left: -1rem;width:2.15rem;text-align: center;line-height: .5rem;}
+        nav.active .smActivity-entrance i{display: block;width: .66rem; height: .66rem;margin:0 auto;}
+        nav.active .smActivity-entrance span{font-size:.32rem;}
+        nav.active .text{text-align: center;bottom:.15rem;font-size:.32rem;}
+        nav.active .text i{width:1.3rem;height:1.3rem;}
+
+    </style>
+</head>
+<body>
+<nav>
+    <ul class="bigImg">
+        <li class="icon-home"><a href="#"><i></i><span></span></a></li>
+        <li class="icon-cate"><a href="#"><i></i><span></span></a></li>
+        <li class="icon-cart"><a href="#"><i></i><span></span></a></li>
+        <li class="icon-my"><a href="#"><i></i><span></span></a></li>
+    </ul>
+    <div class="activity-entrance"><a href="#"><i></i><span>活动</span></a></div>
+</nav>
+<script src="jquery.js"></script>
+<script type="text/javascript">
+    document.documentElement.style.cssText = 'font-size:' + (document.body.offsetWidth / 1080) * 100 + 'px';
+    $(window).resize(function(){
+        document.documentElement.style.cssText = 'font-size:' + (document.body.offsetWidth / 1080) * 100 + 'px';
+    });
+
+    (function(){
+        $(function(){
+            $.ajax({
+                url:"/cache/query?m=get&k=appfoot&ss=949",
+                type:"get",
+                dataType:"json",
+                success:function(d){
+                    var navData = d.data[0];
+                    var _str = "<style>nav{background: "+navData.skin.backcolor+ " url("+navData.skin.backimage+"); background-size:100% 100%;} " +
+                            "nav li a{color:"+navData.skin.textcolor_n+"} " +
+                            "nav li a:hover{color: "+navData.skin.textcolor_s+"} " +
+                            "nav .activity-entrance a:hover{color: "+navData.skin.textcolor_s+"} " +
+                            "nav li.icon-home a i{background: url("+navData.skin.home.icon_n+"); background-size: contain}" +
+                            "nav li.icon-cate a i{background: url("+navData.skin.classify.icon_n+"); background-size: contain}" +
+                            "nav li.icon-cart a i{background: url("+navData.skin.shopcar.icon_n+"); background-size: contain}" +
+                            "nav li.icon-my a i{background: url("+navData.skin.personal.icon_n+"); background-size: contain}" +
+                            "nav .activity-entrance a i{background: url("+navData.huodong.icon_n+"); background-size: contain}" +
+                            "nav .activity-entrance a:hover i{background: url("+navData.huodong.icon_s+"); background-size: contain}" +
+                            "nav li.icon-home a:hover i{background: url("+navData.skin.home.icon_s+"); background-size: contain}" +
+                            "nav li.icon-cate a:hover i{background: url("+navData.skin.classify.icon_s+"); background-size: contain}" +
+                            "nav li.icon-cart a:hover i{background: url("+navData.skin.shopcar.icon_s+"); background-size: contain}" +
+                            "nav li.icon-my a:hover i{background: url("+navData.skin.personal.icon_s+"); background-size: contain}" +
+                            "</style>";
+                    $("body").append(_str);
+
+                    $(".icon-home span").html(navData.skin.home.name);
+                    $(".icon-cate span").html(navData.skin.classify.name);
+                    $(".icon-cart span").html(navData.skin.shopcar.name);
+                    $(".icon-my span").html(navData.skin.personal.name);
+                    $(".activity-entrance span").html(navData.huodong.name);
+
+                    var hoverImg = [];
+                    hoverImg[0] = loadImg(navData.skin.home.icon_s);
+                    hoverImg[1] = loadImg(navData.skin.classify.icon_s);
+                    hoverImg[2] = loadImg(navData.skin.shopcar.icon_s);
+                    hoverImg[3] = loadImg(navData.skin.personal.icon_s);
+                    function loadImg(url){
+                        var i = new Image();
+                        i.src = url;
+                        return i;
+                    }
+
+                    $(".activity-entrance a").attr("href",navData.huodong.link);
+
+                    if(navData.huodong.iswork == true){
+                        $("nav").addClass("active");
+                    }else{
+                        $("nav").removeClass("active");
+                    }
+
+                    if(navData.skin.iconbig == 1){
+                        $("ul").addClass("bigImg");
+                    }else{
+                        $("ul").removeClass("bigImg");
+                    }
+                    if(navData.huodong.iconbig == 0){
+                        $(".activity-entrance").addClass("smActivity-entrance");
+                    }else{
+                        $(".activity-entrance").removeClass("smActivity-entrance");
+                    }
+                    if(navData.huodong.name != ""){
+                        $(".activity-entrance").addClass("text");
+                    }else{
+                        $(".activity-entrance").removeClass("text");
+                    }
+
+                    $("nav li").each(function(){
+                        var _this = $(this), _a = _this.find("a"), _i = _this.find("i"), _hbg = _i.attr("hoverbg");
+                        _this.click(function(){
+                            var _href = _this.attr("_href");
+                            if(_href.length > 0){
+                                window.location.href = _href;
+                            }
+                        });
+                    });
+                }
+            })
+        })
+    })()
+</script>
+</body>
+</html>

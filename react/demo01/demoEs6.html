@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo01</title>
+    <script src="../lib/react.js"></script>
+    <script src="../lib/react-dom.js"></script>
+    <script src="../lib/browser.min.js"></script>
+</head>
+<body>
+<div id="test"></div>
+<script type="text/babel">
+
+
+    /*var Hello = React.createClass({
+        render:function(){
+            return <h1>你好,{this.props.name}</h1>;
+    }
+    })
+
+    ReactDOM.render(
+    <Hello name="HH" />,
+            document.getElementById("test")
+    )*/
+
+    import React,{Component} from 'react';
+    class Hello extends Component{
+        constructor(){
+            super();
+        }
+        render(){
+            return <h1>你好,{this.props.name}</h1>;
+        }
+    }
+    class Output extends Component{
+        constructor(){
+            super();
+        }
+        render(){
+            return (
+                    <Hello name="123" />
+            )
+        }
+    }
+    exports default  Output;
+
+</script>
+</body>
+</html>

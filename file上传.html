@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .input-file{
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+            width: auto;
+            background-color: #2c7;
+            border: solid 1px #ddd;
+            border-radius: 4px;
+            padding: 5px 10px;
+            font-size: 12px;
+            font-weight: normal;
+            line-height: 18px;
+            color:#fff;
+            text-decoration: none;
+        }
+        .input-file input[type="file"] {
+            position: absolute;
+            top: 0;
+            right: 0;
+            font-size: 14px;
+            background-color: #fff;
+            transform: translate(-300px, 0px) scale(4);
+            height: 40px;
+            opacity: 0;
+            filter: alpha(opacity=0);
+        }
+    </style>
+</head>
+<body>
+    <iframe src="" width="" height="" id="downIframeShop" name="downIframeShop" style="display: none;"></iframe>
+
+    <form class="form-horizontal tableForm"  action="" method="post"  target="downIframeShop" role="form" id="downFormShop" enctype="multipart/form-data">
+        <!--控制样式-->
+        <a class="input-file input-fileup" href="javascript:;">
+            + 选择文件<input size="100" type="file" name="file" id="file">
+        </a>
+        <div class="fileerrorTip1"></div>
+        <div class="showFileName1"></div>
+
+        <button id="subBtn">提交</button>
+    </form>
+
+<script src="../../resource/js/jquery-2.1.0.js"></script>
+<script>
+    $(function(){
+        /*展示名称*/
+        $(".input-fileup").on("change","input[type='file']",function(){
+            var filePath=$(this).val();
+            if(filePath.indexOf("jpg")!=-1 || filePath.indexOf("png")!=-1){
+                $(".fileerrorTip1").html("").hide();
+                var arr=filePath.split('\\');  //截取上传文件的名字
+                var fileName=arr[arr.length-1];
+                $(".showFileName1").html(fileName);
+            }else{
+                $(".showFileName1").html("");
+                $(".fileerrorTip1").html("您未上传文件，或者您上传文件类型有误！").show();
+                return false
+            }
+        });
+
+        /*点击确定上传时*/
+        $("#subBtn").click(function(){
+            var fileName = document.getElementById("fileEx").value;
+            if(fileName == "") {
+                alert('<#请选择上传的文件#>');
+                return;
+            }
+            var xls = fileName.substr(fileName.indexOf('.') + 1);
+            if(xls != 'xlsx') {
+                alert('<#请选择excel进行上传！#>');
+                return;
+            }
+            document.getElementById("downFormShop").action = "/product/material/checkin/";
+            document.getElementById("downFormShop").submit();
+            document.getElementById("downIframeShop").onload = function(){
+                var rs = $(document.getElementById("downIframeShop").contentWindow.document.body).children('pre').html();
+                rs = JSON.parse(rs);
+                if(rs.errorCode == "1"){
+                    alert(rs.errors);
+                }else{
+                    alert('<#导入成功！#>');
+                    fileName = "";
+                }
+            }
+        });
+    })
+</script>
+</body>
+</html>

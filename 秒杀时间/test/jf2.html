@@ -1,0 +1,527 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>积分秒杀</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+       .jf2016_0917_1344 {
+            width: 100%;
+            background: url(../images/bgnored.png) no-repeat #cc0000;
+            background-size: 100% 100%;
+           position: absolute;left:0;top:0;
+           padding-bottom: 30px;
+           min-width: 1400px;
+        }
+        .jf2016_0917_1344 .time{
+            margin:0 auto;
+            padding-top: 278px;
+            text-align: center;
+        }
+        .jf2016_0917_1344 .time p{
+            display: inline-block;
+        }
+        .jf2016_0917_1344 .time p span{
+            display: block;font-style: italic;
+        }
+        .jf2016_0917_1344 .time p span:nth-of-type(1){
+            color: #fff700;
+            font-size: 18px;
+            text-align: left;
+        }
+        .jf2016_0917_1344 .time p span:nth-of-type(2) {
+            margin-top: 10px;
+            width: 200px;
+        }
+        .jf2016_0917_1344 .time p span:nth-of-type(2) img{
+            width: 100%;
+            height: 100%;
+        }
+        .jf2016_0917_1344 .time p:nth-of-type(2){
+            margin:0 52px;margin-top: 10px;
+        }
+        .jf2016_0917_1344 .goods_box h1{
+            width: 182px;height: 56px;
+            margin-left: 361px;margin-top:20px;
+        }
+        .jf2016_0917_1344 .goods_box h1 img{
+            width: 100%;height:100%;
+        }
+
+        .jf2016_0917_1344 .goods_list .goods:nth-of-type(1){
+            margin-left: 364px;
+        }
+        .jf2016_0917_1344 .goods_list .goods:nth-of-type(2){
+            margin:0 6px;
+        }
+        .jf2016_0917_1344 .goods {
+            width: 213px;
+            height: 276px;
+            background: #ffefcd;
+            border: 1px solid #d0cece;
+            display: inline-block;
+            padding: 4px;margin-top:20px;
+        }
+        .jf2016_0917_1344 .goods img{
+            width: 100%;
+        }
+        .jf2016_0917_1344 .goods .title{
+            font-weight: bold;color: #3a3a3a;
+            text-align: left;margin-top:10px;
+            height: 45px;
+        }
+        .jf2016_0917_1344 .goods .title span{
+            display: block;margin-top:4px;
+            font-size: 15px;
+        }
+        .jf2016_0917_1344 .goods .pirce {
+            text-align: left;
+        }
+        .jf2016_0917_1344 .goods .pirce span{
+            color: #672a08;
+            font-size: 18px;font-weight: normal;
+            line-height: 30px;
+        }
+        .jf2016_0917_1344 .goods .pirce a{
+            display: inline-block;float: right;
+            background: url("../images/btn2.png") no-repeat;
+            background-size: 100% 100%;color: #fff;font-weight: bold;
+            padding:6px 10px;vertical-align: top;
+        }
+.timer{
+    background: #fff;position: fixed;left:0;top:0;
+    width: 200px;
+    height: 50px;z-index: 100000;
+}
+    </style>
+</head>
+<body>
+<div class="timer">
+    <input type="hidden" id="time28val" value="2016/09/25 10:00" />
+    <div id="tm28"></div>
+    <input type="hidden" id="time29val" value="2016/09/26 10:00" />
+    <div id="tm29"></div>
+    <input type="hidden" id="time30val" value="2016/09/30 10:00" />
+    <div id="tm30"></div>
+</div>
+
+
+<div class="box jf2016_0917_1344">
+            <div class="time">
+                <p>
+                    <span>正在进行</span>
+                    <span><img src="../images/28.png" alt=""></span>
+                </p>
+                <p>
+                    <span>正在进行</span>
+                    <span><img src="../images/29.jpg" alt=""></span>
+                </p>
+                <p>
+                    <span>正在进行</span>
+                    <span><img src="../images/30.png" alt=""></span>
+                </p>
+            </div>
+        <!--9月28-->
+        <div class="goods_box goods28">
+            <div class="goods_list">
+                <h1><img src="../images/99.png" alt=""></h1>
+                <div class="goods">
+                    <img src="http://p3.lefile.cn/product/adminweb/2016/09/23/eebc347e-2a7d-4de7-970f-90a75fb1cccb.png" alt="">
+                    <p class="title"><span>风暴瓶天气预报瓶子</span></p>
+                    <p class="pirce"><span>价值:￥23</span><a>立即秒杀</a></p>
+                </div>
+                <div class="goods">
+                    <img src="http://p4.lefile.cn/product/adminweb/2016/09/23/0926009a-c80b-459f-a990-a5b1c7881ffc.jpg" >
+                    <p class="title"><span>联想16G U盘</span></p>
+                    <p class="pirce"><span>价值:￥30</span><a>立即秒杀</a></p>
+                </div>
+                <div class="goods">
+                    <img src="http://p2.lefile.cn/product/adminweb/2016/09/23/caa34e84-dcbf-413a-a6bd-c3ad476d60d1.png" alt="">
+                    <p class="title"><span>20元电话充值卡</span></p>
+                    <p class="pirce"><span>价值:￥20</span><a>立即秒杀</a></p>
+                </div>
+            </div>
+            <div class="goods_list">
+                <h1><img src="../images/199.png" alt=""></h1>
+                <div class="goods">
+                    <img src="http://p3.lefile.cn/product/adminweb/2016/09/23/fd1eb794-fefa-48ac-af6b-56248b766e1c.png" alt="">
+                    <p class="title"><span>耐热玻璃水壶套组专用 </span><span>泡茶壶王自如同款</span></p>
+                    <p class="pirce"><span>价值:￥86</span><a>立即秒杀</a></p>
+                </div>
+                <div class="goods">
+                    <img src="http://p3.lefile.cn/product/adminweb/2016/09/23/52c6e26c-26f3-4e77-84db-06c84be2fe68.png" alt="">
+                    <p class="title"><span>联想 newifi mini 1200M </span><span>智能无线路由器</span></p>
+                    <p class="pirce"><span>价值:￥99</span><a>立即秒杀</a></p>
+                </div>
+                <div class="goods">
+                    <img src="http://p1.lefile.cn/product/adminweb/2016/09/23/b6b85e85-b31f-4df4-ab71-86dc4daa4601.png" alt="">
+                    <p class="title"><span>50元电话充值卡</span></p>
+                    <p class="pirce"><span>价值:￥50</span><a>立即秒杀</a></p>
+                </div>
+            </div>
+            <div class="goods_list">
+                <h1><img src="../images/499.png" alt=""></h1>
+                <div class="goods">
+                    <img src="http://p3.lefile.cn/product/adminweb/2016/09/23/ce87b723-1f73-4368-a4ae-23157242e65a.jpg" alt="">
+                    <p class="title"><span>静音机芯 不锈钢可拉伸客厅翻页钟 </span></p>
+                    <p class="pirce"><span>价值:￥198</span><a>立即秒杀</a></p>
+                </div>
+                <div class="goods">
+                    <img src="http://p2.lefile.cn/product/adminweb/2016/09/23/6aad7196-746e-4abf-aa70-cbe6dc01dcff.jpg" alt="">
+                    <p class="title"><span>充电书本灯创意礼品led折叠书灯</span></p>
+                    <p class="pirce"><span>价值:￥188</span><a>立即秒杀</a></p>
+                </div>
+                <div class="goods">
+                    <img src="http://p2.lefile.cn/product/adminweb/2016/09/23/94e8257b-ad79-4dba-8469-96ea9424aec4.jpg" alt="">
+                    <p class="title"><span>100京东卡</span></p>
+                    <p class="pirce"><span>价值:￥100</span><a>立即秒杀</a></p>
+                </div>
+            </div>
+            <div class="goods_list">
+                <h1><img src="../images/999.png" alt=""></h1>
+                <div class="goods">
+                    <img src="http://p2.lefile.cn/product/adminweb/2016/09/23/e44ad27e-a318-457f-aab9-f811ea588ad2.jpg" alt="">
+                    <p class="title"><span>联想看家宝 Snowman 1080P版 </span></p>
+                    <p class="pirce"><span>价值:￥396</span><a>立即秒杀</a></p>
+                </div>
+                <div class="goods">
+                    <img src="http://p4.lefile.cn/product/adminweb/2016/09/23/d44ddfc3-0a89-490d-956d-bf97e3b29704.jpg" alt="">
+                    <p class="title"><span>联想智能车载空气净化器CA10  黑 </span></p>
+                    <p class="pirce"><span>价值:￥399</span><a>立即秒杀</a></p>
+                </div>
+                <div class="goods">
+                    <img src="http://p1.lefile.cn/product/adminweb/2016/09/23/93956c9d-59f2-4849-918e-1144fcb469fa.jpg" alt="">
+                    <p class="title"><span>200京东卡</span></p>
+                    <p class="pirce"><span>价值:￥200</span><a>立即秒杀</a></p>
+                </div>
+            </div>
+            <div class="goods_list">
+                <h1><img src="../images/4999.png" alt=""></h1>
+                <div class="goods">
+                    <img src="http://p2.lefile.cn/product/adminweb/2016/09/23/45120174-bf4e-4a66-a4ec-e788a4deee0d.jpg" alt="">
+                    <p class="title"><span>Moto 360 Sport 悦动橙</span></p>
+                    <p class="pirce"><span>价值:￥1999</span><a>立即秒杀</a></p>
+                </div>
+                <div class="goods">
+                    <img src="../images/28_4999_02.jpg" alt="">
+                    <p class="title"><span>ZUK Z2 3+32G 黑色</span></p>
+                    <p class="pirce"><span>价值:￥1599</span><a>立即秒杀</a></p>
+                </div>
+                <div class="goods">
+                    <img src="../images/28_4999_03.jpg" alt="">
+                    <p class="title"><span>1000京东卡</span></p>
+                    <p class="pirce"><span>价值:￥1000</span><a>立即秒杀</a></p>
+                </div>
+            </div>
+            <div class="goods_list">
+                <h1><img src="../images/9999.png" alt=""></h1>
+                <div class="goods">
+                    <img src="../images/28_9999_01.jpg" alt="">
+                    <p class="title"><span>ThinkPad X1 Yoga 14英寸 </span><span>翻转触控笔记本电脑</span></p>
+                    <p class="pirce"><span>价值:￥10100</span><a>立即秒杀</a></p>
+                </div>
+            </div>
+        </div>
+        <!--9月29-->
+        <div class="goods_box goods29">
+            <div class="goods_list">
+                <h1><img src="../images/99.png" alt=""></h1>
+                <div class="goods">
+                    <img src="../images/29_99_01.jpg" alt="">
+                    <p class="title"><span>ZUK MicroUSB转Type-C转接头</span></p>
+                    <p class="pirce"><span>价值:￥29</span><a>立即秒杀</a></p>
+                </div>
+                <div class="goods">
+                    <img src="../images/29_99_02.jpg" >
+                    <p class="title"><span>diy创意马克杯变色水杯</span></p>
+                    <p class="pirce"><span>价值:￥37</span><a>立即秒杀</a></p>
+                </div>
+                <div class="goods">
+                    <img src="../images/29_99_03.jpg" alt="">
+                    <p class="title"><span>20元电话充值卡</span></p>
+                    <p class="pirce"><span>价值:￥20</span><a>立即秒杀</a></p>
+                </div>
+            </div>
+            <div class="goods_list">
+                <h1><img src="../images/199.png" alt=""></h1>
+                <div class="goods">
+                    <img src="../images/29_199_01.png" alt="">
+                    <p class="title"><span>手机镜头通用外置拍照摄像头 </span><span>二合一单反超广角微距镜头套装</span></p>
+                    <p class="pirce"><span>价值:￥88</span><a>立即秒杀</a></p>
+                </div>
+                <div class="goods">
+                    <img src="../images/29_199_02.png" alt="">
+                    <p class="title"><span>SanDisk闪迪 至尊高速 </span><span>OTG手机U盘</span></p>
+                    <p class="pirce"><span>价值:￥129</span><a>立即秒杀</a></p>
+                </div>
+                <div class="goods">
+                    <img src="../images/29_199_03.png" alt="">
+                    <p class="title"><span>50元电话充值卡</span></p>
+                    <p class="pirce"><span>价值:￥50</span><a>立即秒杀</a></p>
+                </div>
+            </div>
+            <div class="goods_list">
+                <h1><img src="../images/499.png" alt=""></h1>
+                <div class="goods">
+                    <img src="../images/29_499_01.jpg" alt="">
+                    <p class="title"><span>iQunix Pad优质铝合金鼠标垫 </span></p>
+                    <p class="pirce"><span>价值:￥199</span><a>立即秒杀</a></p>
+                </div>
+                <div class="goods">
+                    <img src="../images/29_499_02.jpg" alt="">
+                    <p class="title"><span>联想（Lenovo）MK100 87键</span><span>游戏机械键盘 黑色 黑轴</span></p>
+                    <p class="pirce"><span>价值:￥199</span><a>立即秒杀</a></p>
+                </div>
+                <div class="goods">
+                    <img src="../images/29_499_03.jpg" alt="">
+                    <p class="title"><span>100京东卡</span></p>
+                    <p class="pirce"><span>价值:￥100</span><a>立即秒杀</a></p>
+                </div>
+            </div>
+            <div class="goods_list">
+                <h1><img src="../images/999.png" alt=""></h1>
+                <div class="goods">
+                    <img src="../images/29_999_01.jpg" alt="">
+                    <p class="title"><span>联想UM10C直播版手机麦克风</span><span>苹果安卓手机主播K歌话筒</span></p>
+                    <p class="pirce"><span>价值:￥399</span><a>立即秒杀</a></p>
+                </div>
+                <div class="goods">
+                    <img src="../images/29_999_02.jpg" alt="">
+                    <p class="title"><span>联想行车记录仪V50 (金色)</span></p>
+                    <p class="pirce"><span>价值:￥399</span><a>立即秒杀</a></p>
+                </div>
+                <div class="goods">
+                    <img src="../images/29_999_03.jpg" alt="">
+                    <p class="title"><span>200京东卡</span></p>
+                    <p class="pirce"><span>价值:￥200</span><a>立即秒杀</a></p>
+                </div>
+            </div>
+            <div class="goods_list">
+                <h1><img src="../images/4999.png" alt=""></h1>
+                <div class="goods">
+                    <img src="../images/29_4999_01.jpg" alt="">
+                    <p class="title"><span>联想YOGA平板-2-8寸-WiFi版 </span><span>（铂银色）</span></p>
+                    <p class="pirce"><span>价值:￥1999</span><a>立即秒杀</a></p>
+                </div>
+                <div class="goods">
+                    <img src="../images/29_4999_02.jpg" alt="">
+                    <p class="title"><span>联想（Lenovo）New Air X330</span><span>智能空气净化器 （白色）</span></p>
+                    <p class="pirce"><span>价值:￥1999</span><a>立即秒杀</a></p>
+                </div>
+                <div class="goods">
+                    <img src="../images/29_4999_03.jpg" alt="">
+                    <p class="title"><span>1000京东卡</span></p>
+                    <p class="pirce"><span>价值:￥1000</span><a>立即秒杀</a></p>
+                </div>
+            </div>
+            <div class="goods_list">
+                <h1><img src="../images/9999.png" alt=""></h1>
+                <div class="goods">
+                    <img src="../images/29_9999_01.jpg" alt="">
+                    <p class="title"><span>MOTO Z手机</span></p>
+                    <p class="pirce"><span>价值:￥4399</span><a>立即秒杀</a></p>
+                </div>
+            </div>
+        </div>
+        <!--9月30-->
+        <div class="goods_box goods30">
+            <div class="goods_list">
+                <h1><img src="../images/99.png" alt=""></h1>
+                <div class="goods">
+                    <img src="../images/30_99_01.jpg" alt="">
+                    <p class="title"><span>ThinkPad定制电子秤</span></p>
+                    <p class="pirce"><span>价值:￥49</span><a>立即秒杀</a></p>
+                </div>
+                <div class="goods">
+                    <img src="../images/30_99_02.jpg" >
+                    <p class="title"><span>联想便携式路由器</span></p>
+                    <p class="pirce"><span>价值:￥49</span><a>立即秒杀</a></p>
+                </div>
+                <div class="goods">
+                    <img src="../images/30_99_03.jpg" alt="">
+                    <p class="title"><span>20元电话充值卡</span></p>
+                    <p class="pirce"><span>价值:￥20</span><a>立即秒杀</a></p>
+                </div>
+            </div>
+            <div class="goods_list">
+                <h1><img src="../images/199.png" alt=""></h1>
+                <div class="goods">
+                    <img src="../images/30_199_01.png" alt="">
+                    <p class="title"><span>联想智能插座 </span></p>
+                    <p class="pirce"><span>价值:￥99</span><a>立即秒杀</a></p>
+                </div>
+                <div class="goods">
+                    <img src="../images/30_199_02.png" alt="">
+                    <p class="title"><span>Moto Earbuds 入耳式线控耳机</span></p>
+                    <p class="pirce"><span>价值:￥99</span><a>立即秒杀</a></p>
+                </div>
+                <div class="goods">
+                    <img src="../images/30_199_03.png" alt="">
+                    <p class="title"><span>50元电话充值卡</span></p>
+                    <p class="pirce"><span>价值:￥50</span><a>立即秒杀</a></p>
+                </div>
+            </div>
+            <div class="goods_list">
+                <h1><img src="../images/499.png" alt=""></h1>
+                <div class="goods">
+                    <img src="../images/30_499_01.jpg" alt="">
+                    <p class="title"><span>ZUK 智能体质分析仪 白色</span></p>
+                    <p class="pirce"><span>价值:￥199</span><a>立即秒杀</a></p>
+                </div>
+                <div class="goods">
+                    <img src="../images/30_499_02.jpg" alt="">
+                    <p class="title"><span>联想看家宝Snow man</span></p>
+                    <p class="pirce"><span>价值:￥199</span><a>立即秒杀</a></p>
+                </div>
+                <div class="goods">
+                    <img src="../images/30_499_03.jpg" alt="">
+                    <p class="title"><span>100京东卡</span></p>
+                    <p class="pirce"><span>价值:￥100</span><a>立即秒杀</a></p>
+                </div>
+            </div>
+            <div class="goods_list">
+                <h1><img src="../images/999.png" alt=""></h1>
+                <div class="goods">
+                    <img src="../images/30_999_01.jpg" alt="">
+                    <p class="title"><span>ZUK 便携PM2.5检测仪</span></p>
+                    <p class="pirce"><span>价值:￥299</span><a>立即秒杀</a></p>
+                </div>
+                <div class="goods">
+                    <img src="../images/30_999_02.jpg" alt="">
+                    <p class="title"><span>Moto Surround 耳挂式蓝牙耳机)</span></p>
+                    <p class="pirce"><span>价值:￥599</span><a>立即秒杀</a></p>
+                </div>
+                <div class="goods">
+                    <img src="../images/30_999_03.jpg" alt="">
+                    <p class="title"><span>200京东卡</span></p>
+                    <p class="pirce"><span>价值:￥200</span><a>立即秒杀</a></p>
+                </div>
+            </div>
+            <div class="goods_list">
+                <h1><img src="../images/4999.png" alt=""></h1>
+                <div class="goods">
+                    <img src="../images/30_4999_01.jpg" alt="">
+                    <p class="title"><span>Moto Verve Ones+ 运动蓝牙耳机</span></p>
+                    <p class="pirce"><span>价值:￥1999</span><a>立即秒杀</a></p>
+                </div>
+                <div class="goods">
+                    <img src="../images/30_4999_02.jpg" alt="">
+                    <p class="title"><span>Jabra 入耳式心率运动蓝牙耳机</span><span>黑色</span></p>
+                    <p class="pirce"><span>价值:￥1599</span><a>立即秒杀</a></p>
+                </div>
+                <div class="goods">
+                    <img src="../images/30_4999_03.jpg" alt="">
+                    <p class="title"><span>1000京东卡</span></p>
+                    <p class="pirce"><span>价值:￥1000</span><a>立即秒杀</a></p>
+                </div>
+            </div>
+            <div class="goods_list">
+                <h1><img src="../images/9999.png" alt=""></h1>
+                <div class="goods">
+                    <img src="../images/30_9999_01.jpg" alt="">
+                    <p class="title"><span>联想 17 55i2 55吋真4K</span><span>智能网络电视</span></p>
+                    <p class="pirce"><span>价值:￥3199</span><a>立即秒杀</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../jquery.js"></script>
+    <script>
+   
+    var actual_data_1 = 28; //28号
+    var actual_data_2 = 29; //29号
+    var actual_data_3 = 30; //30号
+
+    var rob_AM_start = 10;  //上午开始的秒杀时间
+    var rob_AM_end = 11;    //上午结束的秒杀时间
+
+    var rob_PM_start = 14;  //下午开始的秒杀时间
+    var rob_PM_end = 15;    //下午结束的秒杀时间
+
+    var seckillTime = "";
+
+    $(".time p").click(function(){
+        var _index = $(this).index();
+        $(".goods_box").eq(_index).show().siblings(".goods_box").hide();
+    })
+    function Seckill(){
+        var newTime = new Date();
+        var newTime_year = newTime.getFullYear();   //年
+        var newTime_mounth = newTime.getMonth()+1;  //月
+        var newTime_data = newTime.getDate();       //日
+        var newTime_huor = newTime.getHours();      //小时
+        var newTime_minute = newTime.getMinutes();  //分钟
+        var newTime_second = newTime.getSeconds();  //秒
+
+        if(newTime_data <= 28){
+            $(".goods_box").hide();
+            $(".goods_box").eq(0).show();
+        }else if(newTime_data == 29){
+            $(".goods_box").hide();
+            $(".goods_box").eq(1).show();
+            $(".goods28 .pirce").find("a").html("一结束")
+        }else if(newTime_data == 30){
+            $(".goods_box").hide();
+            $(".goods_box").eq(2).show();
+        }
+       function ifTime(data,hour,minute,second){
+            clearTimeout(seckillTime);
+                //年                     月                       日
+            if(newTime_year == 2016 && newTime_mounth == 9 && newTime_data == data){
+                //判断小时
+                //上午
+                var AM = function(){
+                    if(newTime_huor < rob_AM_start){//小于10点
+                        $(".pirce").find("a").html("即将开始");
+                    }
+                    if(newTime_huor == rob_AM_start || newTime_huor == rob_AM_end){
+                        
+                        $(".pirce").find("a").html("立即秒杀");
+
+                    }
+                    if(newTime_huor > rob_AM_end){
+                        $(".pirce").find("a").html("已经结束");
+                    }
+                    console.log("AM");
+                }
+                //下午
+                var PM = function(){
+                    if(newTime_huor < rob_PM_start){//小于10点
+                        $(".pirce").find("a").html("即将开始");
+                    }
+                    if(newTime_huor == rob_PM_start || newTime_huor == rob_PM_end){
+                        
+                        $(".pirce").find("a").html("立即秒杀");
+                    }
+                    if(newTime_huor > rob_PM_end){
+                        $(".pirce").find("a").html("已经结束");
+                    }
+                    console.log("PM");
+                }
+                
+                //判断上午还是下午
+
+                newTime_data <= 12 ? AM() : PM();
+                
+
+            }else{
+                $(".pirce").find("a").html("即将开始");
+            }
+
+       }
+
+               //天             小时          分钟          秒
+        ifTime(actual_data_2,newTime_huor,newTime_minute,newTime_second);//28号
+        ifTime(actual_data_2,newTime_huor,newTime_minute,newTime_second);//29号
+        ifTime(actual_data_3,newTime_huor,newTime_minute,newTime_second);//30号
+    }
+    Seckill();
+    setTimeout(Seckill,5000);
+
+ 
+    </script>
+</body>
+</html>

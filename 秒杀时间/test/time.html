@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+    function showTime()
+    {
+        var dt1=new Date(document.getElementById("hdfTm1").value);// --获取页面隐藏输入框的截至时间
+
+        var nowdt=new Date();  //--获取当前时间（这个是客户端的时间）
+
+       document.getElementById("tm1").innerHTML=getTimerString(dt1.getTime()-nowdt.getTime()); //--将剩余时间显示在页面上
+
+        setTimeout("showTime();", 1000);// --延时1秒重复执行
+    }
+
+    function getTimerString(time) {
+        d = Math.floor(time / 86400000),
+                h = Math.floor((time % 86400000) / 3600000),
+                m = Math.floor(((time % 86400000) % 3600000) / 60000),
+                s = Math.floor(((time % 86400000) % 3600000 % 60000) / 1000);
+        if (time>0)
+            return d + "天" + h + "小时" + m + "分" + s + "秒";
+            else return "时间到";
+    }
+
+    showTime(); //--调用函数
+</script>
+</body>
+</html>
